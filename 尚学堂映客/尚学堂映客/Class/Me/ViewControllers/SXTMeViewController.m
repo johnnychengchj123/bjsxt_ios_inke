@@ -123,7 +123,7 @@
     cell.detailTextLabel.text = set.subtitle;
     cell.detailTextLabel.font = [UIFont systemFontOfSize:12];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 
@@ -143,6 +143,13 @@
     }
     
     return 0.1;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+
+
+
+
 }
 
 - (NSMutableArray *)dataList {

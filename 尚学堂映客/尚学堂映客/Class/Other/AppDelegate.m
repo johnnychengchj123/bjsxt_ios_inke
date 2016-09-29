@@ -14,6 +14,7 @@
 #import "SXTAdvertiseView.h"
 #import "AppDelegate+SXTUMeung.h"
 #import "SXTUserHelper.h"
+#import "SXTLocationManager.h"
 
 @interface AppDelegate ()
 
@@ -30,18 +31,24 @@
     
     UIViewController * mainVC ;
     
-    if ([SXTUserHelper isAutoLogin]) {
-        
+//    if ([SXTUserHelper isAutoLogin]) {
+    
         mainVC = [[SXTTabBarController alloc] init];
 
-    } else {
-        mainVC = [[SXTLoginViewController alloc] init];
-
-    }
-    
+//    } else {
+//        mainVC = [[SXTLoginViewController alloc] init];
+//
+//    }
+//    
     self.window.rootViewController = mainVC;
     
     [self.window makeKeyAndVisible];
+    
+    [[SXTLocationManager sharedLocationManager] getGps:^(NSString *lat, NSString *lon) {
+        NSLog(@"%@,%@", lat,lon);
+    }];
+    
+    
     
     
     //载入广告

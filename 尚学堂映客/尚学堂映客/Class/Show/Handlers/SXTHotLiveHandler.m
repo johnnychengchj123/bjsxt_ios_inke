@@ -11,7 +11,8 @@
 #import "MJExtension.h"
 #import "SXTLive.h"
 #import "SXTAdvertise.h"
-
+#import "SXTLocationManager.h"
+#import "SXTLocationManager.h"
 @implementation SXTHotLiveHandler
 
 + (void)executeGetAdvertiseWithSuccess:(SuccessBlock)success
@@ -55,9 +56,13 @@
 + (void)executeNearLiveTaskWithSuccess:(SuccessBlock)success
                                 failed:(FailedBlock)failed {
     
-    NSDictionary * params = @{@"uid":@"85149891",
-                              @"latitude":@"40.090562",
-                              @"longitude":@"116.413353"
+    
+    SXTLocationManager *manager = [SXTLocationManager sharedLocationManager];
+    
+    
+    NSDictionary * params = @{@"uid":@"112657599",//85149891
+                              @"latitude":manager.lat,
+                              @"longitude":manager.lon
                               };
     
     [HttpTool getWithPath:API_NearLocation params:params success:^(id json) {
