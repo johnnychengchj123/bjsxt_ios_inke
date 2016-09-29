@@ -66,9 +66,9 @@
     live.creator = creator;
 
     live.streamAddr = Live_Dahuan;
-    live.city = @"北京";
+    live.city = @"上海";
     live.onlineUsers = 100;
-    live.creator.nick = @"大欢";
+    live.creator.nick = @"程挥竣";
     [self.dataList addObject:live];
     
 }

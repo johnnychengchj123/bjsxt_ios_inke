@@ -99,7 +99,7 @@ static int const showtime = 3;
         }else{
             
             dispatch_async(dispatch_get_main_queue(), ^{
-                self.timeLabel.text = [NSString stringWithFormat:@"跳过%d",timeout];
+                self.timeLabel.text = [NSString stringWithFormat:@"%d",timeout];
             });
             timeout--;
         }

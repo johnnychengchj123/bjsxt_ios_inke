@@ -45,9 +45,16 @@
     
     self.navigationItem.titleView = self.topView;
     
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"global_search"] style:UIBarButtonItemStylePlain target:self action:@selector(search:)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"global_search"] style:UIBarButtonItemStylePlain target:self action:@selector(search)];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"title_button_more"] style:UIBarButtonItemStylePlain target:self action:@selector(search:)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"title_button_more"] style:UIBarButtonItemStylePlain target:self action:@selector(search)];
+}
+
+
+- (void)search {
+
+
+
 }
 
 - (void)setupChildControllers {
@@ -91,6 +98,11 @@
     
     childVC.view.frame = CGRectMake(offsetX, 0, width, height);
     [scrollView addSubview:childVC.view];
+    
+    
+//    viewController.hidesBottomBarWhenPushed = YES;
+ 
+    
     
 }
 

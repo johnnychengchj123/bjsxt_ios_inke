@@ -95,6 +95,8 @@
 		0FFD3AF71D6C913800402A8D /* close_preview@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FFD3AEE1D6C913800402A8D /* close_preview@2x.png */; };
 		0FFD3AF81D6C913800402A8D /* close_preview@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FFD3AEF1D6C913800402A8D /* close_preview@3x.png */; };
 		0FFD3AF91D6C913800402A8D /* ios-29x29.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FFD3AF01D6C913800402A8D /* ios-29x29.png */; };
+		B2C90CBA1D9C06C6007B123F /* SXTLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C90CB91D9C06C6007B123F /* SXTLocationManager.m */; };
+		B2C90CBC1D9C084C007B123F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2C90CBB1D9C084C007B123F /* CoreLocation.framework */; };
 		CEB5601CDD1ED87C66C0E058 /* libPods-尚学堂映客.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EDF8678802255DF9060123EA /* libPods-尚学堂映客.a */; };
 /* End PBXBuildFile section */
 
@@ -251,6 +253,9 @@
 		0FFD3AEF1D6C913800402A8D /* close_preview@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close_preview@3x.png"; sourceTree = "<group>"; };
 		0FFD3AF01D6C913800402A8D /* ios-29x29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ios-29x29.png"; sourceTree = "<group>"; };
 		A73240DC43346AFC02F424C9 /* Pods-尚学堂映客.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-尚学堂映客.debug.xcconfig"; path = "Pods/Target Support Files/Pods-尚学堂映客/Pods-尚学堂映客.debug.xcconfig"; sourceTree = "<group>"; };
+		B2C90CB81D9C06C5007B123F /* SXTLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXTLocationManager.h; sourceTree = "<group>"; };
+		B2C90CB91D9C06C6007B123F /* SXTLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXTLocationManager.m; sourceTree = "<group>"; };
+		B2C90CBB1D9C084C007B123F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		D3CB786862DC56DFB2B6DE23 /* Pods-尚学堂映客.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-尚学堂映客.release.xcconfig"; path = "Pods/Target Support Files/Pods-尚学堂映客/Pods-尚学堂映客.release.xcconfig"; sourceTree = "<group>"; };
 		EDF8678802255DF9060123EA /* libPods-尚学堂映客.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-尚学堂映客.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -260,6 +265,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2C90CBC1D9C084C007B123F /* CoreLocation.framework in Frameworks */,
 				0F3BCBD81D6BEC7C00DB6D7A /* VideoToolbox.framework in Frameworks */,
 				0F5CD0281D767B080052E26B /* libUMSocial_Sdk_5.2.1.a in Frameworks */,
 				0F3BCBD61D6BEC7200DB6D7A /* QuartzCore.framework in Frameworks */,
@@ -342,6 +348,8 @@
 				0F5CCFEB1D758AD90052E26B /* SXTCacheHelper.m */,
 				0F5CD0351D767EEF0052E26B /* SXTUserHelper.h */,
 				0F5CD0361D767EEF0052E26B /* SXTUserHelper.m */,
+				B2C90CB81D9C06C5007B123F /* SXTLocationManager.h */,
+				B2C90CB91D9C06C6007B123F /* SXTLocationManager.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -680,6 +688,7 @@
 		5463EFBFC27DA8FC74A0155B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B2C90CBB1D9C084C007B123F /* CoreLocation.framework */,
 				0F3BCBD71D6BEC7C00DB6D7A /* VideoToolbox.framework */,
 				0F3BCBD51D6BEC7200DB6D7A /* QuartzCore.framework */,
 				0F3BCBD31D6BEC6B00DB6D7A /* OpenGLES.framework */,
@@ -733,7 +742,8 @@
 				TargetAttributes = {
 					0FE89A611D62EAD0006F1A54 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 28KZ3JE3WP;
+						DevelopmentTeam = R2G3839M57;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -866,6 +876,7 @@
 				0F0B66B81D6AFAAD000578AA /* SXTBaseHandler.m in Sources */,
 				0F5CD03A1D7687160052E26B /* AppDelegate+SXTUMeung.m in Sources */,
 				0F0B66C61D6B33D9000578AA /* UIImageView+SDWebImage.m in Sources */,
+				B2C90CBA1D9C06C6007B123F /* SXTLocationManager.m in Sources */,
 				0F0B66831D6AD14A000578AA /* SXTNavigationController.m in Sources */,
 				0F0B668F1D6AD14A000578AA /* ViewController.m in Sources */,
 				0F0B66891D6AD14A000578AA /* SXTLoginViewController.m in Sources */,
@@ -1015,6 +1026,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = R2G3839M57;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1030,7 +1042,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bjsxt.realphone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "1fcf5150-e8f0-4b95-b1a8-fb37775bf96d";
+				PROVISIONING_PROFILE_SPECIFIER = chi_developer;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1043,6 +1056,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = R2G3839M57;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1058,7 +1072,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bjsxt.realphone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "1fcf5150-e8f0-4b95-b1a8-fb37775bf96d";
+				PROVISIONING_PROFILE_SPECIFIER = chi_developer;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

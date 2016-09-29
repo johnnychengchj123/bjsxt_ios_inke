@@ -11,8 +11,10 @@
 #import "SXTHotLiveCell.h"
 #import "SXTPlayerViewController.h"
 #import "SXTLiveChatViewController.h"
+#import "AppDelegate.h"
 
 static NSString * identifier = @"SXTHotLiveCell";
+int _lastPosition;    //A variable define in headfile
 
 @interface SXTHotLiveViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -91,6 +93,45 @@ static NSString * identifier = @"SXTHotLiveCell";
 }
 
 
+
+//-(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+//
+//    UIWindow * window = [(AppDelegate *)[UIApplication sharedApplication].delegate window];
+//    window.rootViewController.hidesBottomBarWhenPushed = YES;
+//
+//    
+//}
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    NSLog(@"开始滚动");
+    int currentPostion = scrollView.contentOffset.y;
+    
+    if (currentPostion - _lastPosition > 20  && currentPostion >0) {
+        
+        _lastPosition = currentPostion;
+        
+        NSLog(@"ScrollUp now");
+        
+        self.tabBarController.tabBar.hidden =YES;
+        
+//        [self.navigationControllersetNavigationBarHidden:YESanimated:YES];
+        
+    }
+    else if ((_lastPosition - currentPostion >20) && (currentPostion  <= scrollView.contentSize.height-scrollView.bounds.size.height-20) )
+    {
+        
+        _lastPosition = currentPostion;
+        
+        NSLog(@"ScrollDown now");
+        
+        self.tabBarController.tabBar.hidden =NO;//隐藏时，没有动画效果
+//        [self.navigationControllersetNavigationBarHidden:NOanimated:YES];
+        
+    }
+}
+
+
+
 - (NSMutableArray *)dataList {
     
     if (!_dataList) {
@@ -98,8 +139,7 @@ static NSString * identifier = @"SXTHotLiveCell";
     }
     return _dataList;
 }
-
-
+ 
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -62,6 +62,9 @@
     
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 30, 25)];
     CGRect loveFrame = [fromView convertRect:fromView.frame toView:addToView];
+ 
+    
+    
     CGPoint position = CGPointMake(fromView.layer.position.x, loveFrame.origin.y - 30);
     imageView.layer.position = position;
     NSArray *imgArr = @[@"heart_1",@"heart_2",@"heart_3",@"heart_4",@"heart_5",@"heart_1"];
@@ -85,6 +88,10 @@
     [sPath moveToPoint:position];
     CGFloat sign = arc4random()%2 == 1 ? 1 : -1;
     CGFloat controlPointValue = (arc4random()%50 + arc4random()%100) * sign;
+    NSLog(@"sign: %f,controlPointValue: %f",sign,controlPointValue);
+    
+    
+    
     [sPath addCurveToPoint:CGPointMake(position.x, position.y - 300) controlPoint1:CGPointMake(position.x - controlPointValue, position.y - 150) controlPoint2:CGPointMake(position.x + controlPointValue, position.y - 150)];
     positionAnimate.path = sPath.CGPath;
     [imageView.layer addAnimation:positionAnimate forKey:@"heartAnimated"];
