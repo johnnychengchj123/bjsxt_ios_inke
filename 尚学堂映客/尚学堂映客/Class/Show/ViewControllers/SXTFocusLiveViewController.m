@@ -69,6 +69,7 @@
     live.city = @"上海";
     live.onlineUsers = 100;
     live.creator.nick = @"程挥竣";
+    live.creator.portrait = @"Snip20160929_9";
     [self.dataList addObject:live];
     
 }

@@ -8,6 +8,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SXTLaunchViewController">
             <connections>
+                <outlet property="location" destination="kqi-Pu-MCf" id="978-y5-C5S"/>
                 <outlet property="view" destination="iN0-l3-epB" id="PHp-0U-0Tf"/>
             </connections>
         </placeholder>

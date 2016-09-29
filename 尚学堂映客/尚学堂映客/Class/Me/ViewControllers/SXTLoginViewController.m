@@ -9,6 +9,7 @@
 #import "SXTLoginViewController.h"
 #import "SXTUserHelper.h"
 #import "SXTTabBarController.h"
+#import "AppDelegate.h"
 
 @interface SXTLoginViewController ()
 
@@ -34,11 +35,17 @@
             [SXTUserHelper sharedUser].iconUrl = snsAccount.iconURL;
             //保存入本地
             [SXTUserHelper saveUser];
-            
-            self.view.window.rootViewController = [[SXTTabBarController alloc] init];
+            UIWindow * window = [(AppDelegate *)[UIApplication sharedApplication].delegate window];
+
+            window.rootViewController = [[SXTTabBarController alloc] init];
             
         } else {
+            [SXTUserHelper sharedUser].username = @"Johnny";
+            [SXTUserHelper sharedUser].iconUrl = @"hahaha";
+            UIWindow * window = [(AppDelegate *)[UIApplication sharedApplication].delegate window];
             
+            window.rootViewController = [[SXTTabBarController alloc] init];
+
             NSLog(@"登录失败");
         }
         

@@ -31,7 +31,7 @@
 #define API_NearLocation @"api/live/near_recommend"//?uid=85149891&latitude=40.090562&longitude=116.413353
 
 //欢哥直播地址
-#define Live_Dahuan @"rtmp://live.hkstv.hk.lxdns.com:1935/live/dahuan"
+#define Live_Dahuan @"rtmp://live.hkstv.hk.lxdns.com:1935/live/Johnny12345XDX"
 
 
 

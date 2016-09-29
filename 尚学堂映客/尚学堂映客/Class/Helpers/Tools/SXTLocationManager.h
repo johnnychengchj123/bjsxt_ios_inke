@@ -19,5 +19,6 @@ typedef void(^LocationBlock)(NSString * lat,NSString * lon);
 
 @property (nonatomic,copy) NSString * lat;
 @property (nonatomic,copy) NSString * lon;
+@property (nonatomic,copy) NSString * location;
 
 @end

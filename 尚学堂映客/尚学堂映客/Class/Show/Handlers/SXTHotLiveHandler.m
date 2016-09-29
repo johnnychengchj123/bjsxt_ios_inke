@@ -12,8 +12,7 @@
 #import "SXTLive.h"
 #import "SXTAdvertise.h"
 #import "SXTLocationManager.h"
-#import "SXTLocationManager.h"
-@implementation SXTHotLiveHandler
+ @implementation SXTHotLiveHandler
 
 + (void)executeGetAdvertiseWithSuccess:(SuccessBlock)success
                                 failed:(FailedBlock)failed {

@@ -8,8 +8,10 @@
 
 #import "SXTLaunchViewController.h"
 #import "LFLivePreview.h"
+#import "SXTLocationManager.h"
 
 @interface SXTLaunchViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *location;
 
 @end
 
@@ -35,6 +37,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+//    self.location.=;
+    
+    [self.location setTitle:[SXTLocationManager sharedLocationManager].location forState:UIControlStateNormal];
+    
 }
 
 - (void)didReceiveMemoryWarning {

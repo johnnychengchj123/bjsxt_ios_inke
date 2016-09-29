@@ -15,6 +15,7 @@
 #import "AppDelegate+SXTUMeung.h"
 #import "SXTUserHelper.h"
 #import "SXTLocationManager.h"
+#import "SXTUserHelper.h"
 
 @interface AppDelegate ()
 
@@ -29,17 +30,19 @@
     //设置友盟
     [self setupUmeng];
     
+   
+    
     UIViewController * mainVC ;
     
-//    if ([SXTUserHelper isAutoLogin]) {
-    
+    if ([SXTUserHelper isAutoLogin]) {
+
         mainVC = [[SXTTabBarController alloc] init];
 
-//    } else {
-//        mainVC = [[SXTLoginViewController alloc] init];
-//
-//    }
-//    
+    } else {
+        mainVC = [[SXTLoginViewController alloc] init];
+
+    }
+    
     self.window.rootViewController = mainVC;
     
     [self.window makeKeyAndVisible];

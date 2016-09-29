@@ -67,9 +67,9 @@
     [SXTLocationManager sharedLocationManager].lon = lon;
 
  
-    
+    [self reverseGeoCode];
+
     self.block(lat,lon);
-    
     
     [self.locManager stopUpdatingHeading];
 
@@ -87,7 +87,35 @@
 
 }
 
+- (void)reverseGeoCode{
+    
+    
+    SXTLocationManager *manager = [SXTLocationManager sharedLocationManager];
+    
+    double latitude = [manager.lat doubleValue];
+    double longitude = [manager.lon doubleValue];
 
+    CLLocation *location = [[CLLocation alloc]initWithLatitude:latitude longitude:longitude];
+//    [CLGeocoder reverseGeocodeLocation:location completionHandler:^
+
+    CLGeocoder *geog = [[CLGeocoder alloc]init];
+    [geog reverseGeocodeLocation:location completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
+        CLPlacemark *pl = [placemarks firstObject];
+        
+        if(error == nil)
+        {
+            NSLog(@"%f----%f", pl.location.coordinate.latitude, pl.location.coordinate.longitude);
+            
+            NSLog(@"%@", pl.name);
+//            self.addressTV.text = pl.name;
+//            self.latitudeTF.text = @(pl.location.coordinate.latitude).stringValue;
+//            self.longitudeTF.text = @(pl.location.coordinate.longitude).stringValue;
+                 [SXTLocationManager sharedLocationManager].location = pl.name;
+
+        } 
+    }];
+
+}
 
 
 @end

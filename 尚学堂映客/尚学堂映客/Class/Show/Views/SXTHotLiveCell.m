@@ -29,10 +29,10 @@
     self.cityLabel.text = live.city;
     self.onLineUserLabel.text = [@(live.onlineUsers) stringValue];
     
-    if ([live.creator.nick isEqualToString:@"大欢"]) {
+    if ([live.creator.nick isEqualToString:@"程挥竣"]) {
         
-        self.portraitImageView.image = [UIImage  imageNamed:@"dahuan.png"];
-        self.bigImageView.image = [UIImage  imageNamed:@"dahuan.png"];
+        self.portraitImageView.image = [UIImage  imageNamed:@"Snip20160929_9"];
+        self.bigImageView.image = [UIImage  imageNamed:@"Snip20160929_9"];
         
     } else {
         
